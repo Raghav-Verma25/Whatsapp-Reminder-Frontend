@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
+
+body{
+    margin: 0;
+    padding: 0 ;
+    background: linear-gradient(to bottom right , rgb(255 , 253 , 125) , rgb(253 , 209 , 158));
+    
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ .clock{
+    padding: 10px 10px 10px 10px;
+    /* background-color: #761868; */
+    /* background-color: rgb(255 , 253 , 125) ; */
+    /* background: linear-gradient(to bottom right , rgb(235, 235, 115), rgb(255, 253, 125)); */
+    
+    position: fixed;
+    top: 0;
+    /* width: 100%; */
+    font-size: xx-large;
+    text-align: center;
+    word-spacing:10px;
+    font-family: cursive;
+    letter-spacing: 5px;
+    font-weight: 600;
+    border: 2px solid rgb(185, 230, 160);
+    padding: 0 100px 0 100px;
+   
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+
+.App{
+    display: flex;
+    width: 100vw;
+     justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* position: relative; */
+    overflow: hidden; 
+}
+
+.homepage{
+    /* border: 3px solid pink; */
+    min-width: 100%;
+    min-height: 100%;
+    background: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: linear-gradient(to bottom right , rgb(255 , 253 , 125) , rgb(253 , 209 , 158)); */
+    /* background: linear-gradient(to bottom right , rgb(54, 132, 214) , rgb(177, 158, 253)); */
+}
+
+.homepage_header{
+    border: 3px solid forestgreen;
+    /* margin:2em; */
+    margin-top: 238px;
+    margin-bottom: 53px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    min-width: 20%;
+    min-height: fit-content;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(10 10 10 / 10%), 10px 8px 16px rgb(10 10 10 / 10%);
+    background: white;
+    position: relative;
+}
+
+ .homepage_header > button{
+    border: 1px solid orange;
+    color: #950d0d;
+    font-size: 1.35rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1rem;
+    margin: 1rem 1rem;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    --c: orange; /* the color*/
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+    font-size: 25px;
   }
-  to {
-    transform: rotate(360deg);
+
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #f12f3f;
   }
+
+.homepage_header > input{
+    border: 1px solid grey;
+    outline: none;
+    color: #1d2199;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
 }
+
+.react-datetime-picker{
+    width: 100% important;
+}
+
+.homepage_body{
+    border: 3px double rgb(237, 152, 152);
+    width: 90%;
+    margin-bottom: 14px;
+}
+
+.reminder_card{
+    border: 2px double skyblue;
+    display: flex;
+    /* flex-direction: column; */
+    position: relative;
+    display: inline-block;
+    background: white;
+    border-radius: 8px;
+    margin: 2rem;
+    padding: 1rem;
+    max-width: 350px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.reminder_card > h2{
+    margin-bottom: 1rem;
+    color: #1877f2;
+}
+
+.reminder_card > p{
+    color: grey;
+    margin-bottom: 1rem;
+}
+
+.reminder_card > .button{
+    background:#3783e6;
+    border: 1px solid #1877f2;
+    color: white;
+    font-size: 1.50rem;
+    width: inherit;
+    text-align: center;
+    padding: 0.4rem 0.4rem;
+    margin:0.6rem;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 600px){
+    .homepage_header{
+        margin-top: 400px;
+        padding: 3rem;
+    }
+    /* body{
+        padding: 0;
+        margin: 0;
+    } */
+}
+
+
+/* Animation Cube */
+.cube {
+position: absolute;
+top: 80vh;
+left: 45vw;
+width: 10px;
+height: 10px;
+border: solid 1px #b9d547;
+transform-origin: top left;
+transform: scale(0) rotate(0deg) translate(-50%, -50%);
+-webkit-animation: cube 12s ease-in forwards infinite;
+  animation: cube 16s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+border-color: #dbec22;
+/* border-color: #dcee0b; */
+/* border-color: #e4f003; */
+}
+.cube:nth-child(2) {
+-webkit-animation-delay: 2s;
+  animation-delay: 2s;
+left: 15vw;
+top: 30vh;
+}
+.cube:nth-child(3) {
+-webkit-animation-delay: 4s;
+  animation-delay: 4s;
+  left: 80vw;
+    top: 60vh;
+}
+.cube:nth-child(4) {
+-webkit-animation-delay: 6s;
+  animation-delay: 6s;
+left: 80vw;
+top: 23vh;
+}
+.cube:nth-child(5) {
+-webkit-animation-delay: 8s;
+  animation-delay: 8s;
+left: 10vw;
+top: 63vh;
+}
+.cube:nth-child(6) {
+-webkit-animation-delay: 10s;
+  animation-delay: 10s;
+left: 50vw;
+top: 10vh;
+}
+
+@-webkit-keyframes cube {
+from {
+transform: scale(0) rotate(0deg) translate(-50%, -50%);
+opacity: 1;
+}
+to {
+transform: scale(20) rotate(960deg) translate(-50%, -50%);
+opacity: 0;
+}
+}
+
+@keyframes cube {
+from {
+transform: scale(0) rotate(0deg) translate(-50%, -50%);
+opacity: 1;
+}
+to {
+transform: scale(20) rotate(960deg) translate(-50%, -50%);
+opacity: 0;
+}
+}
+
